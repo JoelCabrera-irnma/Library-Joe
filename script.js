@@ -42,9 +42,13 @@ let getInfo = document.querySelector('#myForm').addEventListener('submit',functi
 
 function createCard(){
     const cardsContenedor = document.querySelector('.cardsContenedor')
-    const card = document.createElement('div')
-    card.className = 'card'
-    card.innerHTML = `<p>libro: ${myLibrary[0].nombre}</p>`
+    cardsContenedor.innerHTML = ""
+    for (let i = 0; i < myLibrary.length; i++) {
+        const card = document.createElement('div')
+        card.className = 'card'
+        card.innerHTML = `<p>libro: ${myLibrary[i].nombre}</p>`
                 
-    cardsContenedor.appendChild(card)
+        cardsContenedor.appendChild(card)
+    }
+    
 }
