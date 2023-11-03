@@ -1,0 +1,25 @@
+
+/* Estilos para el cuadro de diálogo */
+#miDialog {
+    width: 300px;
+    padding: 20px;
+    background-color: #c21414;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+#myForm{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card{
+    background-color: white;
+    border: 1px solid green;
+    padding: 1rem;
+}
