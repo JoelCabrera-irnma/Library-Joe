@@ -18,7 +18,6 @@ let getInfo = document.querySelector('#myForm').addEventListener('submit',functi
     addBookToLibrary()
   })
 
-
 const myLibrary = [];
 
 function Book(nombre, autor, pages, leido) {
@@ -26,7 +25,6 @@ function Book(nombre, autor, pages, leido) {
   this.autor = autor
   this.pages = pages
   this.leido = leido 
-  
 }
 
 function addBookToLibrary() {
@@ -61,6 +59,18 @@ function createCard(){
         butonDelete.textContent = "Delete"
         butonDelete.setAttribute('onclick',`removeElement(${i})`)
         card.appendChild(butonDelete)
+
+        myLibrary[i].leido ? card.className = 'green' : card.className = 'red';
+
+        const butonStatusRead = document.createElement('button')
+        myLibrary[i].leido ? butonStatusRead.textContent = "Read" : butonStatusRead.textContent = "No Read";
+        card.appendChild(butonStatusRead)
+        butonStatusRead.addEventListener('click',function () {
+            if(card.classList.contains("green")){
+                card.classList.replace("green", "red")
+            }
+            else{card.classList.replace("red", "green")}
+        })
     } 
 }
 

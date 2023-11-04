@@ -23,3 +23,11 @@
     border: 1px solid green;
     padding: 1rem;
 }
+
+.green{
+    background-color: rgb(128, 177, 128);
+}
+
+.red{
+    background-color: #db7979;
+}
