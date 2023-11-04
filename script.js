@@ -26,6 +26,7 @@ function Book(nombre, autor, pages, leido) {
   this.autor = autor
   this.pages = pages
   this.leido = leido 
+  
 }
 
 function addBookToLibrary() {
@@ -35,10 +36,11 @@ function addBookToLibrary() {
     const leido = document.getElementById('leido').checked
    
     const newBook = new Book(nombre, autor, pages, leido)
-    console.log(leido)
+
     myLibrary.push(newBook)
 
     createCard()
+    //console.table(myLibrary)
 }
 
 function createCard(){
@@ -53,7 +55,16 @@ function createCard(){
                         <p>paginas: ${myLibrary[i].pages}</p>
                         <p>leido: ${myLibrary[i].leido ? "Ya leido" : "No leido"}</p>
         `  
+        //console.log(i)
         cardsContenedor.appendChild(card)
-        console.log(myLibrary)
+        const butonDelete = document.createElement('button')
+        butonDelete.textContent = "Delete"
+        butonDelete.setAttribute('onclick',`removeElement(${i})`)
+        card.appendChild(butonDelete)
     } 
+}
+
+function removeElement(index) {
+ myLibrary.splice(index,1)
+ createCard()   
 }
