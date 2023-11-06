@@ -1,27 +1,192 @@
+@font-face {
+  font-family: 'CardFont';
+  src: url('./fonts/Calafia_OTF/Calafia-Regular.otf') format('woff2'),
+       url('ruta/a/la/fuente.woff') format('woff'),
+       url('ruta/a/la/fuente.ttf') format('truetype');
+  /* Puedes agregar más formatos si es necesario */
+}
 
 /* Estilos para el cuadro de diálogo */
+.divContenedorDialog{
+   /*  display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red; */
+}
 #miDialog {
     width: 300px;
-    padding: 20px;
-    background-color: #c21414;
+    padding: 30px;
+    background-color: #609fbe;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    position: fixed;
+    border-radius: 20px;
+    /* position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 1; */
 }
 #myForm{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
+    /* border: 1px solid wheat; */
+    color: rgb(234, 230, 91);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+form input{
+  background-color: white;
+  margin-bottom: 5px;
+  border-radius: 1rem;
+  padding: 4px 8px;
+  font-size: .8rem;
+  color: hsl(344, 100%, 50%);
+  font-weight: 520;
+}
+
+label[for="leido"]{
+  display: -ms-flexbox;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.button-82-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.cardsContenedor{
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  gap: 1rem;
+  justify-content: center;
 }
 
 .card{
+    box-sizing: border-box;
     background-color: white;
-    border: 1px solid green;
+    border: 5px double rgb(225, 195, 179);
     padding: 1rem;
+    border-radius: 5%;
+    box-shadow: 4px 4px 7px 3px rgba(0,0,0,0.1);
+    font-family: 'CardFont',serif;
+
+    display: grid;
+    grid-template-rows: 15px 50px 35px 35px 35px 20px;
+    gap: 2px;
+}
+.card p{
+  margin: 0;
+  font-size: 1.1rem;
+}
+.card .encabezado{
+  font-size: 1rem;
+}
+.card .titleCard{
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 8px;
 }
 
 .green{
@@ -30,4 +195,65 @@
 
 .red{
     background-color: #db7979;
+}
+
+.divAddBook{
+    display: flex;
+    justify-content: center;
+}
+
+#mostrarDialog {
+  align-items: center;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Codec cold",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  height: 54px;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#mostrarDialog:active {
+  outline: 0;
+}
+
+#mostrarDialog:hover {
+  outline: 0;
+}
+
+#mostrarDialog span {
+  transition: all 200ms;
+}
+
+#mostrarDialog:hover span {
+  transform: scale(.9);
+  opacity: .75;
+}
+
+@media screen and (max-width: 991px) {
+  #mostrarDialog {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  #mostrarDialog span {
+    line-height: 50px;
+  }
 }

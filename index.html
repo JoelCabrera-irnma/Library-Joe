@@ -7,23 +7,34 @@
     <title>Library</title>
 </head>
 <body>
-    <button id="mostrarDialog">Nuevo Libro</button>
-    <dialog id="miDialog">
-        <form action="" id="myForm">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre">
-            <label for="autor">Autor</label>
-            <input type="text" id="autor">
-            <label for="pages">Pages</label>
-            <input type="text" id="pages">
-            <label for="leido">Leido
-                <input type="checkbox" id="leido">
-            </label>
-            <button id="cerrarDialog" form="myForm" type="submit">Enviar</button>
-        </form>   
-    </dialog>
+    <div class="divAddBook">
+        <button id="mostrarDialog" role="button"><span class="text">Nuevo Libro</span></button>
+    </div>
+    <div class="divContenedorDialog">
+        <dialog id="miDialog">
+            <form action="" id="myForm">
+                <label for="nombre">Titulo</label>
+                <input type="text" id="nombre">
+                <label for="autor">Autor</label>
+                <input type="text" id="autor">
+                <label for="pages">Pages</label>
+                <input type="text" id="pages">
+                <label for="calificacion">Calificacion</label>
+                <input type="text" id="calificacion">
+                <label for="leido">Leido
+                    <input type="checkbox" id="leido">
+                </label>
+                <button id="enviarBook" form="myForm" type="submit" class="button-82-pushable" role="button">
+                    <span class="button-82-shadow"></span>
+                    <span class="button-82-edge"></span>
+                    <span class="button-82-front text">
+                    Agregar Book
+                    </span>
+                </button>
+            </form>
+        </dialog>
+    </div>
     <div class="cardsContenedor">
-
     </div>
 </body>
 <script src="./script.js" defer></script>
