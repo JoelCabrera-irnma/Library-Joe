@@ -56,12 +56,14 @@ function createCard(){
                         <p class="dato"> Paginas: ${myLibrary[i].pages}</p>
                         <p class="dato"> Calficacion: ${myLibrary[i].calificacion} ★</p>
         `  
+        const divButtons = document.createElement('div')
+        divButtons.className = 'buttonContenedor'
         //console.log(i)
         myLibrary[i].leido ? card.classList.add('green') : card.classList.add('red');
 
         const butonStatusRead = document.createElement('button')
         myLibrary[i].leido ? butonStatusRead.textContent = "Read" : butonStatusRead.textContent = "No Read";
-        card.appendChild(butonStatusRead)
+        divButtons.appendChild(butonStatusRead)
         butonStatusRead.addEventListener('click',function () {
             if(card.classList.contains("green")){
                 card.classList.replace("green", "red")
@@ -77,7 +79,9 @@ function createCard(){
         const butonDelete = document.createElement('button')
         butonDelete.textContent = "Delete"
         butonDelete.setAttribute('onclick',`removeElement(${i})`)
-        card.appendChild(butonDelete)
+        divButtons.appendChild(butonDelete)
+
+        card.appendChild(divButtons)
     } 
 }
 

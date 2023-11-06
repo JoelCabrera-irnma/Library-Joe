@@ -161,6 +161,7 @@ label[for="leido"]{
   grid-template-columns: repeat(5, 250px);
   gap: 1rem;
   justify-content: center;
+  padding-top: 10px;
 }
 
 .card{
@@ -173,7 +174,7 @@ label[for="leido"]{
     font-family: 'CardFont',serif;
 
     display: grid;
-    grid-template-rows: 15px 50px 35px 35px 35px 20px;
+    grid-template-rows: 15px 50px 35px 35px 35px 30px;
     gap: 2px;
 }
 .card p{
@@ -187,6 +188,26 @@ label[for="leido"]{
   font-size: 1.8rem;
   text-align: center;
   margin-top: 8px;
+}
+
+.card button{
+  font-family: monospace;
+  background-color: #f3f7fe;
+  color: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  transition: .3s;
+}
+
+.card button:hover {
+  background-color: #3b82f6;
+  box-shadow: 0 0 0 2px #3b83f65f;
+  color: #fff;
+}
+
+.buttonContenedor{
+  display: grid;
+  gap: 2px;
 }
 
 .green{
@@ -215,7 +236,7 @@ label[for="leido"]{
   font-family: "Codec cold",sans-serif;
   font-size: 16px;
   font-weight: 700;
-  height: 54px;
+  height: 34px;
   justify-content: center;
   letter-spacing: .4px;
   line-height: 1;
