@@ -20,12 +20,15 @@ let getInfo = document.querySelector('#myForm').addEventListener('submit',functi
 
 const myLibrary = [];
 
-function Book(nombre, autor, pages, calificacion, leido) {
-  this.nombre = nombre
-  this.autor = autor
-  this.pages = pages
-  this.leido = leido
-  this.calificacion = calificacion 
+const Book = class  {
+    constructor(nombre, autor, pages, calificacion, leido){
+        this.nombre = nombre
+        this.autor = autor
+        this.pages = pages
+        this.leido = leido
+        this.calificacion = calificacion 
+    }
+  
 }
 
 function addBookToLibrary() {
